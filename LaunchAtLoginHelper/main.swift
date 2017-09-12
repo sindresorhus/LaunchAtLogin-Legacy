@@ -14,12 +14,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
 		let pathComponents = (Bundle.main.bundlePath as NSString).pathComponents
 		let mainPath = NSString.path(withComponents: Array(pathComponents[0...(pathComponents.count - 5)]))
-		NSWorkspace.shared().launchApplication(mainPath)
+		NSWorkspace.shared.launchApplication(mainPath)
 		NSApp.terminate(nil)
 	}
 }
 
-let app = NSApplication.shared()
+let app = NSApplication.shared
 let delegate = AppDelegate()
 app.delegate = delegate
 app.run()
