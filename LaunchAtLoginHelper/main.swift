@@ -7,7 +7,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 		let mainBundleId = bundleId.replacingOccurrences(of: "-LaunchAtLoginHelper", with: "")
 
 		// Ensure the app is not already running
-		if !NSRunningApplication.runningApplications(withBundleIdentifier: mainBundleId).isEmpty {
+		guard NSRunningApplication.runningApplications(withBundleIdentifier: mainBundleId).isEmpty else {
 			NSApp.terminate(nil)
 			return
 		}

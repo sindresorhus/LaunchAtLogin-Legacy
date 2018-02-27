@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -26,14 +26,14 @@
 
 /* Begin PBXFileReference section */
 		E32E9B631EB87D7B000FEEE9 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LaunchAtLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E32E9B661EB87D7B000FEEE9 /* LaunchAtLogin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchAtLogin.h; sourceTree = "<group>"; };
+		E32E9B661EB87D7B000FEEE9 /* LaunchAtLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LaunchAtLogin.h; sourceTree = "<group>"; usesTabs = 1; };
 		E32E9B671EB87D7B000FEEE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E32E9B6E1EB87DC5000FEEE9 /* LaunchAtLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchAtLogin.swift; sourceTree = "<group>"; };
+		E32E9B6E1EB87DC5000FEEE9 /* LaunchAtLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LaunchAtLogin.swift; sourceTree = "<group>"; usesTabs = 1; };
 		E32E9B741EB87EA3000FEEE9 /* LaunchAtLoginHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchAtLoginHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E32E9B761EB87EA3000FEEE9 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		E32E9B761EB87EA3000FEEE9 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = main.swift; sourceTree = "<group>"; usesTabs = 1; };
 		E32E9B7F1EB87EA3000FEEE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E32E9B831EB87F57000FEEE9 /* LaunchAtLoginHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaunchAtLoginHelper.entitlements; sourceTree = "<group>"; };
-		E32E9B921EB889AE000FEEE9 /* copy-helper.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "copy-helper.sh"; sourceTree = "<group>"; };
+		E32E9B921EB889AE000FEEE9 /* copy-helper.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; lineEnding = 0; path = "copy-helper.sh"; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +62,7 @@
 				E32E9B641EB87D7B000FEEE9 /* Products */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 1;
 		};
 		E32E9B641EB87D7B000FEEE9 /* Products */ = {
 			isa = PBXGroup;
@@ -173,7 +174,7 @@
 				};
 			};
 			buildConfigurationList = E32E9B5D1EB87D7B000FEEE9 /* Build configuration list for PBXProject "LaunchAtLogin" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
