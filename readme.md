@@ -22,7 +22,7 @@ It's usually quite a convoluted and error-prone process to add this. **No more!*
 +  2. Add a new "Run Script Phase"
 ```
 
-It's App Store compatible and used in my [Lungo](https://blog.sindresorhus.com/lungo-b364a6c2745f) app.
+It's App Store compatible and used in my [Lungo](https://blog.sindresorhus.com/lungo-b364a6c2745f) and [Battery Indicator](https://sindresorhus.com/battery-indicator) app.
 
 You might also find my [`create-dmg`](https://github.com/sindresorhus/create-dmg) project useful.
 
@@ -39,6 +39,10 @@ You might also find my [`create-dmg`](https://github.com/sindresorhus/create-dmg
 ```
 github "sindresorhus/LaunchAtLogin"
 ```
+
+<a href="https://www.patreon.com/sindresorhus">
+	<img src="https://c5.patreon.com/external/logo/become_a_patron_button@2x.png" width="160">
+</a>
 
 
 ## Usage
@@ -69,6 +73,11 @@ print(LaunchAtLogin.isEnabled)
 ## How does it work?
 
 The framework bundles the helper app needed to launch your app and copies it into your app at build time.
+
+
+## Related
+
+- [DockProgress](https://github.com/sindresorhus/DockProgress) - Show progress in your app's Dock icon
 
 
 ## License
