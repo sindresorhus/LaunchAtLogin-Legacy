@@ -30,8 +30,8 @@ You might also find my [`create-dmg`](https://github.com/sindresorhus/create-dmg
 ## Requirements
 
 - macOS 10.12+
-- Xcode 9+
-- Swift 4+
+- Xcode 9.3+
+- Swift 4.1+
 
 
 ## Install with [Carthage](https://github.com/Carthage/Carthage#getting-started)
