@@ -59,6 +59,7 @@ The framework bundles the helper app needed to launch your app and copies it int
 
 ## Related
 
+- [Defaults](https://github.com/sindresorhus/Defaults) - Swifty and modern UserDefaults
 - [DockProgress](https://github.com/sindresorhus/DockProgress) - Show progress in your app's Dock icon
 
 
