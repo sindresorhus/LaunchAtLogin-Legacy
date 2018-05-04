@@ -156,15 +156,11 @@
 				TargetAttributes = {
 					E32E9B621EB87D7B000FEEE9 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = YG56YK5RN5;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
 					};
 					E32E9B731EB87EA3000FEEE9 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = YG56YK5RN5;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
 								enabled = 1;
@@ -361,7 +357,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YG56YK5RN5;
@@ -378,6 +375,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sindresorhus.LaunchAtLogin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = singlefile;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -390,7 +388,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YG56YK5RN5;
@@ -407,6 +406,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sindresorhus.LaunchAtLogin;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -417,6 +417,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LaunchAtLoginHelper/LaunchAtLoginHelper.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YG56YK5RN5;
 				INFOPLIST_FILE = LaunchAtLoginHelper/Info.plist;
@@ -426,6 +428,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sindresorhus.LaunchAtLoginHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -436,6 +439,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = LaunchAtLoginHelper/LaunchAtLoginHelper.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = YG56YK5RN5;
 				INFOPLIST_FILE = LaunchAtLoginHelper/Info.plist;
@@ -445,6 +450,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.sindresorhus.LaunchAtLoginHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
