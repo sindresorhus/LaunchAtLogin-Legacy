@@ -16,7 +16,7 @@ You might also find my [`create-dmg`](https://github.com/sindresorhus/create-dmg
 - Swift 4.1+
 
 
-## Install with [Carthage](https://github.com/Carthage/Carthage#getting-started)
+## Install with Carthage
 
 ```
 github "sindresorhus/LaunchAtLogin"
@@ -60,6 +60,7 @@ The framework bundles the helper app needed to launch your app and copies it int
 ## Related
 
 - [Defaults](https://github.com/sindresorhus/Defaults) - Swifty and modern UserDefaults
+- [Preferences](https://github.com/sindresorhus/Preferences) - Add a preferences window to your macOS app in minutes
 - [DockProgress](https://github.com/sindresorhus/DockProgress) - Show progress in your app's Dock icon
 
 
