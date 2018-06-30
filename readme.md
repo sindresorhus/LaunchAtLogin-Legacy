@@ -16,10 +16,18 @@ You might also find my [`create-dmg`](https://github.com/sindresorhus/create-dmg
 - Swift 4.1+
 
 
-## Install with Carthage
+## Install
+
+#### Carthage
 
 ```
 github "sindresorhus/LaunchAtLogin"
+```
+
+#### CocoaPods
+
+```ruby
+pod 'LaunchAtLogin'
 ```
 
 <a href="https://www.patreon.com/sindresorhus">
