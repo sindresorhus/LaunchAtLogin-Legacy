@@ -39,8 +39,16 @@ pod 'LaunchAtLogin'
 
 Add a new ["Run Script Phase"](http://stackoverflow.com/a/39633955/64949) below "Embed Frameworks" in "Build Phases" with the following:
 
+Carthage:
+
 ```sh
 ./Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh
+```
+
+CocoaPods:
+
+```sh
+./Pod/LaunchAtLogin/LaunchAtLogin/copy-helper.sh
 ```
 
 Use it in your app:
