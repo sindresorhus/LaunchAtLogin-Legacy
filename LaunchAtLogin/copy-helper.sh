@@ -13,5 +13,5 @@ codesign --force --entitlements="$CODE_SIGN_ENTITLEMENTS" --sign="$EXPANDED_CODE
 
 if [[ $CONFIGURATION == "Release" ]]; then
 	rm -rf "$origin_helper_path"
-	rm "$(dirname $origin_helper_path)/copy-helper.sh"
+	rm "$(dirname "$origin_helper_path")/copy-helper.sh"
 fi
