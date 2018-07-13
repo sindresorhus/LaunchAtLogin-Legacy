@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 	s.name = 'LaunchAtLogin'
-	s.version = '2.2.0'
+	s.version = '2.2.1'
 	s.summary = 'Add "Launch at Login" functionality to your sandboxed macOS app in seconds'
 	s.license = 'MIT'
 	s.homepage = 'https://github.com/sindresorhus/LaunchAtLogin'
