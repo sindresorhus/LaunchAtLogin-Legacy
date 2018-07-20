@@ -48,7 +48,7 @@ Carthage:
 CocoaPods:
 
 ```sh
-./Pod/LaunchAtLogin/LaunchAtLogin/copy-helper.sh
+./Pods/LaunchAtLogin/LaunchAtLogin/copy-helper.sh
 ```
 
 Use it in your app:
