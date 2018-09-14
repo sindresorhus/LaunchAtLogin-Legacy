@@ -12,8 +12,8 @@ You might also find my [`create-dmg`](https://github.com/sindresorhus/create-dmg
 ## Requirements
 
 - macOS 10.12+
-- Xcode 9.3+
-- Swift 4.1+
+- Xcode 10+
+- Swift 4.2+
 
 
 ## Install
