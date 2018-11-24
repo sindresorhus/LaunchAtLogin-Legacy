@@ -12,9 +12,9 @@ defaults write "$helper_path/Contents/Info" CFBundleIdentifier -string "$PRODUCT
 
 if [[ -z ${CODE_SIGN_ENTITLEMENTS} ]];
 then
-    codesign --force --entitlements="$CODE_SIGN_ENTITLEMENTS" --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$helper_path"
-else
     codesign --force --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$helper_path"
+else
+    codesign --force --entitlements="$CODE_SIGN_ENTITLEMENTS" --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$helper_path"
 fi
 
 if [[ $CONFIGURATION == "Release" ]]; then
