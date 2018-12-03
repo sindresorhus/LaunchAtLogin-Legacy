@@ -42,13 +42,13 @@ Add a new ["Run Script Phase"](http://stackoverflow.com/a/39633955/64949) below 
 Carthage:
 
 ```sh
-./Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh
+"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh"
 ```
 
 CocoaPods:
 
 ```sh
-./Pods/LaunchAtLogin/LaunchAtLogin/copy-helper.sh
+"${PROJECT_DIR}/Pods/LaunchAtLogin/LaunchAtLogin/copy-helper.sh"
 ```
 
 Use it in your app:
