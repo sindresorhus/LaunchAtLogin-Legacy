@@ -9,7 +9,12 @@ mkdir -p "$helper_dir"
 cp -rf "$origin_helper_path" "$helper_dir/"
 
 defaults write "$helper_path/Contents/Info" CFBundleIdentifier -string "$PRODUCT_BUNDLE_IDENTIFIER-LaunchAtLoginHelper"
-codesign --force --entitlements="$CODE_SIGN_ENTITLEMENTS" --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$helper_path"
+
+if [[ -n $CODE_SIGN_ENTITLEMENTS ]]; then
+	codesign --force --entitlements="$CODE_SIGN_ENTITLEMENTS" --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$helper_path"
+else
+	codesign --force --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$helper_path"
+fi
 
 if [[ $CONFIGURATION == "Release" ]]; then
 	rm -rf "$origin_helper_path"
