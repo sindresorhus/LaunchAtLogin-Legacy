@@ -9,6 +9,6 @@ Pod::Spec.new do |s|
 	s.source = { :git => 'https://github.com/sindresorhus/LaunchAtLogin.git', :tag => "v#{s.version}" }
 	s.source_files = 'LaunchAtLogin', 'LaunchAtLoginHelper'
 	s.resource = 'LaunchAtLogin/copy-helper.sh'
-	s.swift_version = '4.2'
+	s.swift_version = '5'
 	s.platform = :macos, '10.12'
 end
