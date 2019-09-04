@@ -30,6 +30,13 @@ github "sindresorhus/LaunchAtLogin"
 pod 'LaunchAtLogin'
 ```
 
+#### Swift Package Manager
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/sindresorhus/LaunchAtLogin.git", from: "2.5.0")
+]
+```
 
 ## Usage
 
