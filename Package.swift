@@ -8,5 +8,4 @@ let package = Package(name: "LaunchAtLogin",
                       targets: [.target(name: "LaunchAtLogin",
                                         path: "LaunchAtLogin"),
                                         .target(name: "LaunchAtLoginHelper",
-                                        path: "LaunchAtLoginHelper")],
-                      swiftLanguageVersions: [.v5])
+                                        path: "LaunchAtLoginHelper")])
