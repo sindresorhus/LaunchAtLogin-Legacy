@@ -18,6 +18,12 @@ This package works with both sandboxed and non-sandboxed apps and it's App Store
 
 ## Install
 
+#### SwiftPM
+
+```swift
+.package(url: "https://github.com/sindresorhus/LaunchAtLogin", from: "2.6.0")
+```
+
 #### Carthage
 
 ```
