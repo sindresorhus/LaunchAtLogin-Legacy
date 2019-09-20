@@ -41,6 +41,12 @@ pod 'LaunchAtLogin'
 
 Add a new ["Run Script Phase"](http://stackoverflow.com/a/39633955/64949) below "Embed Frameworks" in "Build Phases" with the following:
 
+SwiftPM:
+
+```
+${BUILD_ROOT}/../../SourcePackages/checkouts/LaunchAtLogin/LaunchAtLogin/copy-helper.sh
+```
+
 Carthage:
 
 ```sh
@@ -52,6 +58,7 @@ CocoaPods:
 ```sh
 "${PROJECT_DIR}/Pods/LaunchAtLogin/LaunchAtLogin/copy-helper.sh"
 ```
+
 
 Use it in your app:
 
