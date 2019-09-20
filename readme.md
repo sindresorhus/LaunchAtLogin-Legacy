@@ -69,6 +69,13 @@ print(LaunchAtLogin.isEnabled)
 The framework bundles the helper app needed to launch your app and copies it into your app at build time.
 
 
+## FAQ
+
+#### I'm getting a `'SMCopyAllJobDictionaries' was deprecated in OS X 10.10` warning
+
+Apple deprecated that API without providing an alternative. Apple engineers have [stated that it's still the preferred API to use](https://github.com/alexzielenski/StartAtLoginController/issues/12#issuecomment-307525807). I plan to use it as long as it's available. There are workarounds I can implement if Apple ever removes the API, so rest assured, this module will be made to work even then. If you want to see this resolved, submit a [Feedback Assistant](https://feedbackassistant.apple.com) report with [the following text](https://github.com/feedback-assistant/reports/issues/16). There's unfortunately still [no way to supress warnings in Swift](https://stackoverflow.com/a/32861678/64949).
+
+
 ## Related
 
 - [Defaults](https://github.com/sindresorhus/Defaults) - Swifty and modern UserDefaults
