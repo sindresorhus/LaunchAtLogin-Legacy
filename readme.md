@@ -18,6 +18,12 @@ This package works with both sandboxed and non-sandboxed apps and it's App Store
 
 ## Install
 
+#### SwiftPM
+
+```swift
+.package(url: "https://github.com/sindresorhus/LaunchAtLogin", from: "2.5.0")
+```
+
 #### Carthage
 
 ```
@@ -28,14 +34,6 @@ github "sindresorhus/LaunchAtLogin"
 
 ```ruby
 pod 'LaunchAtLogin'
-```
-
-#### Swift Package Manager
-
-```swift
-dependencies: [
-    .package(url: "https://github.com/sindresorhus/LaunchAtLogin.git", from: "2.5.0")
-]
 ```
 
 ## Usage
