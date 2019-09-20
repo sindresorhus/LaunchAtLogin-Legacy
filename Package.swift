@@ -9,7 +9,6 @@ let package = Package(
 			name: "LaunchAtLogin",
 			targets: [
 				"LaunchAtLogin",
-				"LaunchAtLoginHelper"
 			]
 		)
 	],
@@ -17,10 +16,6 @@ let package = Package(
 		.target(
 			name: "LaunchAtLogin",
 			path: "LaunchAtLogin"
-		),
-		.target(
-			name: "LaunchAtLoginHelper",
-			path: "LaunchAtLoginHelper"
 		)
 	]
 )
