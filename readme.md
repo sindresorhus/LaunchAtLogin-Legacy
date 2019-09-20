@@ -36,6 +36,7 @@ github "sindresorhus/LaunchAtLogin"
 pod 'LaunchAtLogin'
 ```
 
+
 ## Usage
 
 Add a new ["Run Script Phase"](http://stackoverflow.com/a/39633955/64949) below "Embed Frameworks" in "Build Phases" with the following:
