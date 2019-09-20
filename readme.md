@@ -24,27 +24,13 @@ This package works with both sandboxed and non-sandboxed apps and it's App Store
 github "sindresorhus/LaunchAtLogin"
 ```
 
-#### CocoaPods
-
-```ruby
-pod 'LaunchAtLogin'
-```
-
 
 ## Usage
 
 Add a new ["Run Script Phase"](http://stackoverflow.com/a/39633955/64949) below "Embed Frameworks" in "Build Phases" with the following:
 
-Carthage:
-
 ```sh
 "${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh"
-```
-
-CocoaPods:
-
-```sh
-"${PROJECT_DIR}/Pods/LaunchAtLogin/LaunchAtLogin/copy-helper.sh"
 ```
 
 Use it in your app:
@@ -70,6 +56,10 @@ The framework bundles the helper app needed to launch your app and copies it int
 
 
 ## FAQ
+
+#### Can you support CocoaPods?
+
+CocoaPods used to be supported, but [it did not work well](https://github.com/sindresorhus/LaunchAtLogin/issues/22) and there was no easy way to fix it, so support was dropped. Even though you mainly use CocoaPods, you can still use Carthage just for this package without any problems.
 
 #### I'm getting a `'SMCopyAllJobDictionaries' was deprecated in OS X 10.10` warning
 
