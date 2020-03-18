@@ -1,7 +1,15 @@
 #!/bin/bash
 
-origin_helper_path="$BUILT_PRODUCTS_DIR/$FRAMEWORKS_FOLDER_PATH/LaunchAtLogin.framework/Resources/LaunchAtLoginHelper.app"
-helper_dir="$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/Library/LoginItems"
+if [ "${DEPLOYMENT_LOCATION}" = "YES" ] ; then
+    WHERE="${DSTROOT}"
+    helper_dir="${WHERE}/$CONTENTS_FOLDER_PATH/Library/LoginItems"
+    origin_helper_path="${helper_dir}/LaunchAtLogin.framework/Resources/LaunchAtLoginHelper.app"
+else
+    WHERE="${BUILT_PRODUCTS_DIR}"
+    origin_helper_path="${WHERE}/$FRAMEWORKS_FOLDER_PATH/LaunchAtLogin.framework/Resources/LaunchAtLoginHelper.app"
+    helper_dir="${WHERE}/$CONTENTS_FOLDER_PATH/Library/LoginItems"
+fi
+
 helper_path="$helper_dir/LaunchAtLoginHelper.app"
 
 rm -rf "$helper_path"
@@ -18,5 +26,5 @@ fi
 
 if [[ $CONFIGURATION == "Release" ]]; then
 	rm -rf "$origin_helper_path"
-	rm "$(dirname "$origin_helper_path")/copy-helper.sh"
+	rm "$(dirname "$origin_helper_path")/copy-helper.sh" || true
 fi
