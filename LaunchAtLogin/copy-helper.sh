@@ -1,13 +1,13 @@
 #!/bin/bash
 
-if [ "${DEPLOYMENT_LOCATION}" = "YES" ] ; then
-    WHERE="${DSTROOT}"
-    helper_dir="${WHERE}/$CONTENTS_FOLDER_PATH/Library/LoginItems"
-    origin_helper_path="${helper_dir}/LaunchAtLogin.framework/Resources/LaunchAtLoginHelper.app"
+if [ "${DEPLOYMENT_LOCATION}" = "YES" ]; then # this is an archive/Profile build
+	build_root="${DSTROOT}"
+	helper_dir="${build_root}/$CONTENTS_FOLDER_PATH/Library/LoginItems"
+	origin_helper_path="${helper_dir}/LaunchAtLogin.framework/Resources/LaunchAtLoginHelper.app"
 else
-    WHERE="${BUILT_PRODUCTS_DIR}"
-    origin_helper_path="${WHERE}/$FRAMEWORKS_FOLDER_PATH/LaunchAtLogin.framework/Resources/LaunchAtLoginHelper.app"
-    helper_dir="${WHERE}/$CONTENTS_FOLDER_PATH/Library/LoginItems"
+	build_root="${BUILT_PRODUCTS_DIR}"
+	helper_dir="${build_root}/$CONTENTS_FOLDER_PATH/Library/LoginItems"
+	origin_helper_path="${build_root}/$FRAMEWORKS_FOLDER_PATH/LaunchAtLogin.framework/Resources/LaunchAtLoginHelper.app"
 fi
 
 helper_path="$helper_dir/LaunchAtLoginHelper.app"
