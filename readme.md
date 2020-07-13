@@ -33,7 +33,7 @@ Add a new ["Run Script Phase"](http://stackoverflow.com/a/39633955/64949) **belo
 #### SwiftPM
 
 ```sh
-"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper-swiftpm.sh"
+"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh"
 ```
 
 #### Carthage
