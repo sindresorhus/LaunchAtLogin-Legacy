@@ -14,6 +14,12 @@ This package works with both sandboxed and non-sandboxed apps and it's App Store
 
 ## Install
 
+#### SwiftPM
+
+```
+.package(url: "https://github.com/sindresorhus/LaunchAtLogin", from: "3.0.2")
+```
+
 #### Carthage
 
 ```
@@ -23,6 +29,14 @@ github "sindresorhus/LaunchAtLogin"
 ## Usage
 
 Add a new ["Run Script Phase"](http://stackoverflow.com/a/39633955/64949) **below** "Embed Frameworks" in "Build Phases" with the following:
+
+SwiftPM:
+
+```sh
+"${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper-swiftpm.sh"
+```
+
+Carthage:
 
 ```sh
 "${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh"
