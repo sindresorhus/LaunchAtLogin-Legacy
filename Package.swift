@@ -10,10 +10,6 @@ let package = Package(
         .library(
             name: "LaunchAtLogin",
             targets: ["LaunchAtLogin"]
-        ),
-        .executable(
-            name: "LaunchAtLoginHelper.app",
-            targets: ["LaunchAtLoginHelper"]
         )
     ],
     targets: [
@@ -27,14 +23,6 @@ let package = Package(
             resources: [
                 .copy("LaunchAtLogin.entitlements"),
                 .copy("copy-helper-swiftpm.sh")
-            ]
-        ),
-        .target(
-            name: "LaunchAtLoginHelper",
-            path: "LaunchAtLoginHelper",
-            exclude: [
-                "Info.plist",
-                "LaunchAtLoginHelper.entitlements"
             ]
         )
     ]
