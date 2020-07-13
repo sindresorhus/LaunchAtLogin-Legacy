@@ -30,13 +30,13 @@ github "sindresorhus/LaunchAtLogin"
 
 Add a new ["Run Script Phase"](http://stackoverflow.com/a/39633955/64949) **below** "Embed Frameworks" in "Build Phases" with the following:
 
-SwiftPM:
+#### SwiftPM
 
 ```sh
 "${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper-swiftpm.sh"
 ```
 
-Carthage:
+#### Carthage
 
 ```sh
 "${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh"
