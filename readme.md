@@ -14,7 +14,7 @@ This package works with both sandboxed and non-sandboxed apps and it's App Store
 
 ## Install
 
-#### SwiftPM
+#### Swift Package Manager
 
 ```
 .package(url: "https://github.com/sindresorhus/LaunchAtLogin", from: "3.0.2")
@@ -30,7 +30,7 @@ github "sindresorhus/LaunchAtLogin"
 
 Add a new ["Run Script Phase"](http://stackoverflow.com/a/39633955/64949) **below** "Embed Frameworks" in "Build Phases" with the following:
 
-#### SwiftPM
+#### Swift Package Manager
 
 ```sh
 "${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh"
