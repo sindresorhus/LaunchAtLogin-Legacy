@@ -22,7 +22,8 @@ let package = Package(
             ],
             resources: [
                 .copy("LaunchAtLogin.entitlements"),
-                .copy("copy-helper-swiftpm.sh")
+                .copy("copy-helper-swiftpm.sh"),
+                .copy("LaunchAtLoginHelper.app")
             ]
         )
     ]
