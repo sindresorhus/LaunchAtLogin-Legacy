@@ -2,16 +2,16 @@
 
 package_resources_path="$BUILT_PRODUCTS_DIR/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources"
 
-helper_name="LaunchAtLoginHelper.app"
-helper_path="$package_resources_path/$helper_name"
+helper_name="LaunchAtLoginHelper"
+helper_path="$package_resources_path/$helper_name.zip"
 
 contents_path="$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH"
 login_items="$contents_path/Library/LoginItems"
-login_helper_path="$login_items/$helper_name"
+login_helper_path="$login_items/$helper_name.app"
 
 rm -rf "$login_helper_path"
 mkdir -p "$login_items"
-cp -rf "$helper_path" "$login_helper_path"
+unzip "$helper_path" -d "$login_items/"
 
 defaults write "$login_helper_path/Contents/Info" CFBundleIdentifier -string "$PRODUCT_BUNDLE_IDENTIFIER-LaunchAtLoginHelper"
 
