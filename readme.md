@@ -61,7 +61,7 @@ print(LaunchAtLogin.shared.isEnabled)
 
 #### Storyboards:
 
-Bind control to  `isEnabled` ViewController's property:
+Bind control to  `LaunchAtLogin.isEnabled` ViewController's property:
 
 ```
 import Cocoa
@@ -70,7 +70,6 @@ import LaunchAtLogin
 class ViewController: NSViewController {
     @objc dynamic var launchAtLogin = LaunchAtLogin.shared
 }
-
 ```
 ![storyboard_binding](.github/storyboard_binding.png)
 
