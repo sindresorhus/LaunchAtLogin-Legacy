@@ -1,10 +1,16 @@
 import Foundation
 import ServiceManagement
 
-public struct LaunchAtLogin {
-	private static let id = "\(Bundle.main.bundleIdentifier!)-LaunchAtLoginHelper"
+public class LaunchAtLogin {
+    public static let shared = LaunchAtLogin()
 
-	public static var isEnabled: Bool {
+    public static var isEnabled: Bool {
+        get { shared.isEnabled }
+        set { shared.isEnabled = newValue }
+    }
+    private let id = "\(Bundle.main.bundleIdentifier!)-LaunchAtLoginHelper"
+
+	public var isEnabled: Bool {
 		get {
 			guard let jobs = (SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String: AnyObject]]) else {
 				return false
