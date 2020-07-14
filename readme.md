@@ -28,7 +28,10 @@ Add a new ["Run Script Phase"](http://stackoverflow.com/a/39633955/64949) **belo
 "${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh"
 ```
 
-Use it in your app:
+
+### Use it in your app:
+
+#### As static property:
 
 ```swift
 import LaunchAtLogin
@@ -40,6 +43,71 @@ LaunchAtLogin.isEnabled = true
 
 print(LaunchAtLogin.isEnabled)
 //=> true
+```
+
+#### As singleton:
+
+```swift
+import LaunchAtLogin
+
+print(LaunchAtLogin.shared.isEnabled)
+//=> false
+
+LaunchAtLogin.shared.isEnabled = true
+
+print(LaunchAtLogin.shared.isEnabled)
+//=> true
+```
+
+#### Storyboards:
+
+Bind control to  `isEnabled` ViewController's property:
+
+```
+import Cocoa
+import LaunchAtLogin
+
+class ViewController: NSViewController {
+    @objc dynamic var launchAtLogin = LaunchAtLogin.shared
+}
+
+```
+![storyboard_binding](.github/storyboard_binding.png)
+
+#### SwiftUI:
+
+Use `LaunchAtLogin.shared` as binding with `@ObservedObject`:
+
+```
+import SwiftUI
+import LaunchAtLogin
+
+struct ContentView: View {
+    @ObservedObject private var launchAtLogin = LaunchAtLogin.shared
+
+    var body: some View {
+        Toggle(isOn: $launchAtLogin.isEnabled) {
+            Text("Launch at login")
+        }
+        .toggleStyle(CheckboxToggleStyle())
+    }
+}
+```
+#### Combine:
+
+Just subscribe to `LaunchAtLogin.publisher`:
+
+```
+import Combine
+import LaunchAtLogin
+
+private var isLaunchAtLoginEnabled = LaunchAtLogin.isEnabled
+private var cancellable = Set<AnyCancellable>()
+
+LaunchAtLogin
+    .publisher
+    .assign(to: \.isLaunchAtLoginEnabled, on: self)
+    .store(in: &cancellable)
 ```
 
 No need to store any state to UserDefaults.
