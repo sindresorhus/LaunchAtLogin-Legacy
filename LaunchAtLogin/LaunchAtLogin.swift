@@ -2,8 +2,9 @@ import Combine
 import Foundation
 import ServiceManagement
 
-public class LaunchAtLogin: NSObject {
+public class LaunchAtLogin {
     public static let shared = LaunchAtLogin()
+    public static let kvo = shared.kvo
 
     public static var isEnabled: Bool {
         get { shared.isEnabled }
@@ -12,7 +13,8 @@ public class LaunchAtLogin: NSObject {
 
     @available(OSX 10.15, *)
     public static var publisher: AnyPublisher<Bool, Never> = {
-        shared
+        LaunchAtLogin
+            .kvo
             .publisher(for: \.isEnabled)
             .removeDuplicates()
             .eraseToAnyPublisher()
@@ -20,7 +22,9 @@ public class LaunchAtLogin: NSObject {
 
     private let id = "\(Bundle.main.bundleIdentifier!)-LaunchAtLoginHelper"
 
-    @objc dynamic public var isEnabled: Bool {
+    public lazy var kvo = LaunchAtLoginKVO(launchAtLogin: self)
+
+    public var isEnabled: Bool {
         get {
             guard let jobs = (SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String: AnyObject]]) else {
                 return false
@@ -35,10 +39,23 @@ public class LaunchAtLogin: NSObject {
                 objectWillChange.send()
             }
 
-            willChangeValue(for: \.isEnabled)
+            kvo.willChangeValue(for: \.isEnabled)
             SMLoginItemSetEnabled(id as CFString, newValue)
-            didChangeValue(for: \.isEnabled)
+            kvo.didChangeValue(for: \.isEnabled)
         }
+    }
+}
+
+public class LaunchAtLoginKVO: NSObject {
+    private let launchAtLogin: LaunchAtLogin
+
+    init(launchAtLogin: LaunchAtLogin) {
+        self.launchAtLogin = launchAtLogin
+    }
+
+    @objc dynamic public var isEnabled: Bool {
+        get { launchAtLogin.isEnabled }
+        set { launchAtLogin.isEnabled = newValue }
     }
 }
 
