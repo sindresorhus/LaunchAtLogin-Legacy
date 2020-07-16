@@ -11,7 +11,7 @@ public class LaunchAtLogin {
         set { shared.isEnabled = newValue }
     }
 
-    @available(OSX 10.15, *)
+    @available(macOS 10.15, *)
     public static var publisher: AnyPublisher<Bool, Never> = {
         LaunchAtLogin
             .kvo
@@ -35,7 +35,7 @@ public class LaunchAtLogin {
             return job?["OnDemand"] as? Bool ?? false
         }
         set {
-            if #available(OSX 10.15, *) {
+            if #available(macOS 10.15, *) {
                 objectWillChange.send()
             }
 
@@ -59,5 +59,5 @@ public class LaunchAtLoginKVO: NSObject {
     }
 }
 
-@available(OSX 10.15, *)
+@available(macOS 10.15, *)
 extension LaunchAtLogin: ObservableObject { }
