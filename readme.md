@@ -16,11 +16,15 @@ This package works with both sandboxed and non-sandboxed apps and it's App Store
 
 #### Swift Package Manager
 
+Xcode 12+ required.
+
 ```
 .package(url: "https://github.com/sindresorhus/LaunchAtLogin", from: "3.0.2")
 ```
 
 #### Carthage
+
+*Warning: Carthage is not recommended. Support for it will be removed at some point in the future.
 
 ```
 github "sindresorhus/LaunchAtLogin"
