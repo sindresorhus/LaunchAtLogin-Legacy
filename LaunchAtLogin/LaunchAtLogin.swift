@@ -3,12 +3,12 @@ import Foundation
 import ServiceManagement
 
 public class LaunchAtLogin {
-    public static let shared = LaunchAtLogin()
-    public static let kvo = shared.kvo
+    public static let observable = LaunchAtLogin()
+    public static let kvo = observable.kvo
 
     public static var isEnabled: Bool {
-        get { shared.isEnabled }
-        set { shared.isEnabled = newValue }
+        get { observable.isEnabled }
+        set { observable.isEnabled = newValue }
     }
 
     @available(macOS 10.15, *)
