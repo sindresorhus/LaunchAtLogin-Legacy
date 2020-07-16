@@ -38,7 +38,7 @@
 		E32E9B761EB87EA3000FEEE9 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = main.swift; sourceTree = "<group>"; usesTabs = 1; };
 		E32E9B7F1EB87EA3000FEEE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E32E9B921EB889AE000FEEE9 /* copy-helper.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; lineEnding = 0; path = "copy-helper.sh"; sourceTree = "<group>"; usesTabs = 1; };
-		E3A6EB57249009C3004D7101 /* LaunchAtLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = LaunchAtLogin.entitlements; path = LaunchAtLogin/LaunchAtLogin.entitlements; sourceTree = "<group>"; };
+		E3A6EB57249009C3004D7101 /* LaunchAtLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaunchAtLogin.entitlements; sourceTree = "<group>"; };
 		E3B8C38A20C0003300272EC0 /* LaunchAtLoginHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaunchAtLoginHelper.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,12 +60,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9CFA59424C0FB5E005BC9E9 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E32E9B651EB87D7B000FEEE9 /* LaunchAtLogin */,
+				E32E9B751EB87EA3000FEEE9 /* LaunchAtLoginHelper */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
 		E32E9B591EB87D7B000FEEE9 = {
 			isa = PBXGroup;
 			children = (
-				E3A6EB57249009C3004D7101 /* LaunchAtLogin.entitlements */,
-				E32E9B651EB87D7B000FEEE9 /* LaunchAtLogin */,
-				E32E9B751EB87EA3000FEEE9 /* LaunchAtLoginHelper */,
+				D9CFA59424C0FB5E005BC9E9 /* Sources */,
 				E32E9B641EB87D7B000FEEE9 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -83,11 +90,12 @@
 		E32E9B651EB87D7B000FEEE9 /* LaunchAtLogin */ = {
 			isa = PBXGroup;
 			children = (
-				E32E9B6E1EB87DC5000FEEE9 /* LaunchAtLogin.swift */,
-				E32E9B661EB87D7B000FEEE9 /* LaunchAtLogin.h */,
-				E32E9B921EB889AE000FEEE9 /* copy-helper.sh */,
 				D9EF7E1C24BCF9E300A1E9AA /* copy-helper-swiftpm.sh */,
+				E32E9B921EB889AE000FEEE9 /* copy-helper.sh */,
 				E32E9B671EB87D7B000FEEE9 /* Info.plist */,
+				E3A6EB57249009C3004D7101 /* LaunchAtLogin.entitlements */,
+				E32E9B661EB87D7B000FEEE9 /* LaunchAtLogin.h */,
+				E32E9B6E1EB87DC5000FEEE9 /* LaunchAtLogin.swift */,
 				D99CAE7924BD0C3E00F0159C /* LaunchAtLoginHelper.zip */,
 			);
 			path = LaunchAtLogin;
@@ -383,7 +391,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = LaunchAtLogin/Info.plist;
+				INFOPLIST_FILE = Sources/LaunchAtLogin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -413,7 +421,7 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = LaunchAtLogin/Info.plist;
+				INFOPLIST_FILE = Sources/LaunchAtLogin/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -431,13 +439,13 @@
 		E32E9B811EB87EA3000FEEE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = LaunchAtLoginHelper/LaunchAtLoginHelper.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Sources/LaunchAtLoginHelper/LaunchAtLoginHelper.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = LaunchAtLoginHelper/Info.plist;
+				INFOPLIST_FILE = Sources/LaunchAtLoginHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -452,13 +460,13 @@
 		E32E9B821EB87EA3000FEEE9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = LaunchAtLoginHelper/LaunchAtLoginHelper.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Sources/LaunchAtLoginHelper/LaunchAtLoginHelper.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = LaunchAtLoginHelper/Info.plist;
+				INFOPLIST_FILE = Sources/LaunchAtLoginHelper/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

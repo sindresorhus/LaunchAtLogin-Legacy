@@ -4,7 +4,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationDidFinishLaunching(_ notification: Notification) {
 		let bundleId = Bundle.main.bundleIdentifier!
 		// TODO: Make this more strict by only replacing at the end
-		let mainBundleId = bundleId.replacingOccurrences(of: "-LaunchAtLoginHelper", with: "")
+		let mainBundleId = "dev.kuryanov.TestLaunchApp-LaunchAtLoginHelper"
 
 		// Ensure the app is not already running
 		guard NSRunningApplication.runningApplications(withBundleIdentifier: mainBundleId).isEmpty else {

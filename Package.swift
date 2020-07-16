@@ -15,7 +15,6 @@ let package = Package(
     targets: [
         .target(
             name: "LaunchAtLogin",
-            path: "LaunchAtLogin",
             exclude: [
                 "Info.plist",
                 "copy-helper.sh"
