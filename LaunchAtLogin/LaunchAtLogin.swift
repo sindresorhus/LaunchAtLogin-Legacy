@@ -112,7 +112,6 @@ extension LaunchAtLogin {
             SwiftUI.Toggle(isOn: $launchAtLogin.isEnabled) {
                 label
             }
-            .toggleStyle(CheckboxToggleStyle())
         }
     }
 }

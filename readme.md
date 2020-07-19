@@ -90,7 +90,6 @@ struct ContentView: View {
         Toggle(isOn: $launchAtLogin.isEnabled) {
             Text("Launch at login")
         }
-        .toggleStyle(CheckboxToggleStyle())
     }
 }
 ```
