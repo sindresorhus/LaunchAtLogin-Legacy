@@ -63,9 +63,7 @@ extension LaunchAtLogin {
 }
 
 // MARK: - Toggle
-#if canImport(SwiftUI)
-  import SwiftUI
-#endif
+import SwiftUI
 
 @available(macOS 10.15, *)
 extension LaunchAtLogin {

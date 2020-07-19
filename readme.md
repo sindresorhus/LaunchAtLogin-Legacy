@@ -101,15 +101,15 @@ Just subscribe to `LaunchAtLogin.publisher`:
 import Combine
 import LaunchAtLogin
 
-class ViewModel {
+final class ViewModel {
     private var isLaunchAtLoginEnabled = LaunchAtLogin.isEnabled
-    private var cancellable = Set<AnyCancellable>()
+    private var cancellables = Set<AnyCancellable>()
 
     func bind() {
         LaunchAtLogin
             .publisher
             .assign(to: \.isLaunchAtLoginEnabled, on: self)
-            .store(in: &cancellable)
+            .store(in: &cancellables)
     }
 }
 ```
@@ -122,7 +122,7 @@ Bind control to  `LaunchAtLogin.kvo` exposed property:
 import Cocoa
 import LaunchAtLogin
 
-class ViewController: NSViewController {
+final class ViewController: NSViewController {
     @objc dynamic var launchAtLogin = LaunchAtLogin.kvo
 }
 ```
