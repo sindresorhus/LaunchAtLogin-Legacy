@@ -2,28 +2,20 @@ import Combine
 import Foundation
 import ServiceManagement
 
-public class LaunchAtLogin {
-    public static let observable = LaunchAtLogin()
-    public static let kvo = observable.kvo
+public enum LaunchAtLogin {
+    public static let kvo = LaunchAtLoginKVO()
 
     @available(macOS 10.15, *)
-    public static var publisher = observable.publisher
+    public static let observable = LaunchAtLoginObservable()
+
+    @available(macOS 10.15, *)
+    private static var _publisher = CurrentValueSubject<Bool, Never>(isEnabled)
+    @available(macOS 10.15, *)
+    public static var publisher = _publisher.eraseToAnyPublisher()
+
+    private static let id = "\(Bundle.main.bundleIdentifier!)-LaunchAtLoginHelper"
 
     public static var isEnabled: Bool {
-        get { observable.isEnabled }
-        set { observable.isEnabled = newValue }
-    }
-
-    private let id = "\(Bundle.main.bundleIdentifier!)-LaunchAtLoginHelper"
-
-    public lazy var kvo = LaunchAtLoginKVO(launchAtLogin: self)
-
-    @available(macOS 10.15, *)
-    private lazy var _publisher = CurrentValueSubject<Bool, Never>(isEnabled)
-    @available(macOS 10.15, *)
-    public lazy var publisher = _publisher.eraseToAnyPublisher()
-
-    public var isEnabled: Bool {
         get {
             guard let jobs = (SMCopyAllJobDictionaries(kSMDomainUserLaunchd).takeRetainedValue() as? [[String: AnyObject]]) else {
                 return false
@@ -35,7 +27,7 @@ public class LaunchAtLogin {
         }
         set {
             if #available(macOS 10.15, *) {
-                objectWillChange.send()
+                observable.objectWillChange.send()
             }
 
             kvo.willChangeValue(for: \.isEnabled)
@@ -49,21 +41,23 @@ public class LaunchAtLogin {
     }
 }
 
-@available(macOS 10.15, *)
-extension LaunchAtLogin: ObservableObject { }
+// MARK: - LaunchAtLoginObservable
+extension LaunchAtLogin {
+    @available(macOS 10.15, *)
+    public final class LaunchAtLoginObservable: ObservableObject {
+        public var isEnabled: Bool {
+            get { LaunchAtLogin.isEnabled }
+            set { LaunchAtLogin.isEnabled = newValue }
+        }
+    }
+}
 
 // MARK: - LaunchAtLoginKVO
 extension LaunchAtLogin {
-    public class LaunchAtLoginKVO: NSObject {
-        private let launchAtLogin: LaunchAtLogin
-
-        init(launchAtLogin: LaunchAtLogin) {
-            self.launchAtLogin = launchAtLogin
-        }
-
+    public final class LaunchAtLoginKVO: NSObject {
         @objc dynamic public var isEnabled: Bool {
-            get { launchAtLogin.isEnabled }
-            set { launchAtLogin.isEnabled = newValue }
+            get { LaunchAtLogin.isEnabled }
+            set { LaunchAtLogin.isEnabled = newValue }
         }
     }
 }
