@@ -56,9 +56,9 @@ You create a toggle by providing a label. Set the label to a view that visually 
 
 ```
 var body: some View {
-    LaunchAtLogin.Toggle {
-        Text("Launch at login")
-    }
+	LaunchAtLogin.Toggle {
+		Text("Launch at login")
+	}
 }
 ```
 
@@ -66,14 +66,14 @@ For the common case of text-only labels, you can use the convenience initializer
 
 ```
 var body: some View {
-    LaunchAtLogin.Toggle("Launch at login")
+	LaunchAtLogin.Toggle("Launch at login")
 }
 ```
 Default initializer will use "Launch at login" as a title.
 
 ```
 var body: some View {
-    LaunchAtLogin.Toggle()
+	LaunchAtLogin.Toggle()
 }
 ```
 
@@ -84,13 +84,13 @@ import SwiftUI
 import LaunchAtLogin
 
 struct ContentView: View {
-   @ObservedObject private var launchAtLogin = LaunchAtLogin.observable
+	@ObservedObject private var launchAtLogin = LaunchAtLogin.observable
 
-    var body: some View {
-        Toggle(isOn: $launchAtLogin.isEnabled) {
-            Text("Launch at login")
-        }
-    }
+	var body: some View {
+		Toggle(isOn: $launchAtLogin.isEnabled) {
+			Text("Launch at login")
+		}
+	}
 }
 ```
 #### Combine:
@@ -102,15 +102,15 @@ import Combine
 import LaunchAtLogin
 
 final class ViewModel {
-    private var isLaunchAtLoginEnabled = LaunchAtLogin.isEnabled
-    private var cancellables = Set<AnyCancellable>()
+	private var isLaunchAtLoginEnabled = LaunchAtLogin.isEnabled
+	private var cancellables = Set<AnyCancellable>()
 
-    func bind() {
-        LaunchAtLogin
-            .publisher
-            .assign(to: \.isLaunchAtLoginEnabled, on: self)
-            .store(in: &cancellables)
-    }
+	func bind() {
+		LaunchAtLogin
+			.publisher
+			.assign(to: \.isLaunchAtLoginEnabled, on: self)
+			.store(in: &cancellables)
+	}
 }
 ```
 
@@ -123,7 +123,7 @@ import Cocoa
 import LaunchAtLogin
 
 final class ViewController: NSViewController {
-    @objc dynamic var launchAtLogin = LaunchAtLogin.kvo
+	@objc dynamic var launchAtLogin = LaunchAtLogin.kvo
 }
 ```
 ![storyboard_binding](.github/storyboard_binding.png)
