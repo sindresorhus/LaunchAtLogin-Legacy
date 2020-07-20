@@ -54,7 +54,7 @@ You can use `LaunchAtLogin.Toggle` view: a control that toggles launch at login 
 
 You create a toggle by providing a label. Set the label to a view that visually describes the purpose of switching between launch at login states. For example:
 
-```
+```swift
 struct ContentView: View {
 	var body: some View {
 		LaunchAtLogin.Toggle {
@@ -66,7 +66,7 @@ struct ContentView: View {
 
 For the common case of text-only labels, you can use the convenience initializer that takes a title string (or localized string key) as its first parameter, instead of a trailing closure:
 
-```
+```swift
 struct ContentView: View {
 	var body: some View {
 		LaunchAtLogin.Toggle("Launch at login")
@@ -75,7 +75,7 @@ struct ContentView: View {
 ```
 Default initializer will use "Launch at login" as a title.
 
-```
+```swift
 struct ContentView: View {
 	var body: some View {
 		LaunchAtLogin.Toggle()
@@ -85,7 +85,7 @@ struct ContentView: View {
 
 As alternative you can use `LaunchAtLogin.observable` as binding with `@ObservedObject`:
 
-```
+```swift
 import SwiftUI
 import LaunchAtLogin
 
@@ -103,7 +103,7 @@ struct ContentView: View {
 
 Just subscribe to `LaunchAtLogin.publisher`:
 
-```
+```swift
 import Combine
 import LaunchAtLogin
 
@@ -124,7 +124,7 @@ final class ViewModel {
 
 Bind control to  `LaunchAtLogin.kvo` exposed property:
 
-```
+```swift
 import Cocoa
 import LaunchAtLogin
 
