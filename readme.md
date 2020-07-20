@@ -55,9 +55,11 @@ You can use `LaunchAtLogin.Toggle` view: a control that toggles launch at login 
 You create a toggle by providing a label. Set the label to a view that visually describes the purpose of switching between launch at login states. For example:
 
 ```
-var body: some View {
-	LaunchAtLogin.Toggle {
-		Text("Launch at login")
+struct ContentView: View {
+	var body: some View {
+		LaunchAtLogin.Toggle {
+			Text("Launch at login")
+		}
 	}
 }
 ```
@@ -65,15 +67,19 @@ var body: some View {
 For the common case of text-only labels, you can use the convenience initializer that takes a title string (or localized string key) as its first parameter, instead of a trailing closure:
 
 ```
-var body: some View {
-	LaunchAtLogin.Toggle("Launch at login")
+struct ContentView: View {
+	var body: some View {
+		LaunchAtLogin.Toggle("Launch at login")
+	}
 }
 ```
 Default initializer will use "Launch at login" as a title.
 
 ```
-var body: some View {
-	LaunchAtLogin.Toggle()
+struct ContentView: View {
+	var body: some View {
+		LaunchAtLogin.Toggle()
+	}
 }
 ```
 
