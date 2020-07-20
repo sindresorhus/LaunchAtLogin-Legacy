@@ -3,10 +3,10 @@ import Foundation
 import ServiceManagement
 
 public enum LaunchAtLogin {
-	public static let kvo = LaunchAtLoginKVO()
+	public static let kvo = KVO()
 
 	@available(macOS 10.15, *)
-	public static let observable = LaunchAtLoginObservable()
+	public static let observable = Observable()
 
 	@available(macOS 10.15, *)
 	private static var _publisher = CurrentValueSubject<Bool, Never>(isEnabled)
@@ -44,7 +44,7 @@ public enum LaunchAtLogin {
 // MARK: - LaunchAtLoginObservable
 extension LaunchAtLogin {
 	@available(macOS 10.15, *)
-	public final class LaunchAtLoginObservable: ObservableObject {
+	public final class Observable: ObservableObject {
 		public var isEnabled: Bool {
 			get { LaunchAtLogin.isEnabled }
 			set { LaunchAtLogin.isEnabled = newValue }
@@ -54,7 +54,7 @@ extension LaunchAtLogin {
 
 // MARK: - LaunchAtLoginKVO
 extension LaunchAtLogin {
-	public final class LaunchAtLoginKVO: NSObject {
+	public final class KVO: NSObject {
 		@objc dynamic public var isEnabled: Bool {
 			get { LaunchAtLogin.isEnabled }
 			set { LaunchAtLogin.isEnabled = newValue }
@@ -136,7 +136,7 @@ extension LaunchAtLogin.Toggle where Label == Text {
 	public init<S>(_ title: S) where S: StringProtocol {
 		label = Text(title)
 	}
-	
+
 	/// Creates a launch at login toggle with default title.
 	///
 	/// This initializer creates a ``Text`` view on your behalf with ``Launch at login``
