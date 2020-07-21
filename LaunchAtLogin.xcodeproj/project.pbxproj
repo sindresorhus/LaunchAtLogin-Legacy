@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D99CAE7A24BD0C3E00F0159C /* LaunchAtLoginHelper.zip in Resources */ = {isa = PBXBuildFile; fileRef = D99CAE7924BD0C3E00F0159C /* LaunchAtLoginHelper.zip */; };
 		D9EF7E1D24BCF9E300A1E9AA /* copy-helper-swiftpm.sh in Resources */ = {isa = PBXBuildFile; fileRef = D9EF7E1C24BCF9E300A1E9AA /* copy-helper-swiftpm.sh */; };
 		E32E9B681EB87D7B000FEEE9 /* LaunchAtLogin.h in Headers */ = {isa = PBXBuildFile; fileRef = E32E9B661EB87D7B000FEEE9 /* LaunchAtLogin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E32E9B6F1EB87DC5000FEEE9 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E9B6E1EB87DC5000FEEE9 /* LaunchAtLogin.swift */; };
@@ -28,7 +27,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D99CAE7924BD0C3E00F0159C /* LaunchAtLoginHelper.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = LaunchAtLoginHelper.zip; sourceTree = "<group>"; };
 		D9EF7E1C24BCF9E300A1E9AA /* copy-helper-swiftpm.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "copy-helper-swiftpm.sh"; sourceTree = "<group>"; };
 		E32E9B631EB87D7B000FEEE9 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LaunchAtLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E32E9B661EB87D7B000FEEE9 /* LaunchAtLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LaunchAtLogin.h; sourceTree = "<group>"; usesTabs = 1; };
@@ -96,7 +94,6 @@
 				E3A6EB57249009C3004D7101 /* LaunchAtLogin.entitlements */,
 				E32E9B661EB87D7B000FEEE9 /* LaunchAtLogin.h */,
 				E32E9B6E1EB87DC5000FEEE9 /* LaunchAtLogin.swift */,
-				D99CAE7924BD0C3E00F0159C /* LaunchAtLoginHelper.zip */,
 			);
 			path = LaunchAtLogin;
 			sourceTree = "<group>";
@@ -213,7 +210,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D99CAE7A24BD0C3E00F0159C /* LaunchAtLoginHelper.zip in Resources */,
 				E32E9B861EB8845E000FEEE9 /* LaunchAtLoginHelper.app in Resources */,
 				E32E9B931EB889AE000FEEE9 /* copy-helper.sh in Resources */,
 				D9EF7E1D24BCF9E300A1E9AA /* copy-helper-swiftpm.sh in Resources */,
