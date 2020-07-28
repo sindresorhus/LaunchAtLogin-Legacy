@@ -1,19 +1,29 @@
 #!/bin/bash
 
+verlte() {
+    [  "$1" = "`echo -e "$1\n$2" | sort -V | head -n1`" ]
+}
+
+if verlte "10.14.4" "$MACOSX_DEPLOYMENT_TARGET"; then
+    helper_name="LaunchAtLoginHelper"
+    checksum="4842fa690b83d96d509dad6763571125e4a2ae2dcf8f858f88518486816a5598"
+else
+    helper_name="LaunchAtLoginHelper-with-runtime"
+    checksum="ceef772a05157e9b64e40fb022d19e6462e371f9d69d1dbd3c1e64096bde535d"
+fi
+
 package_resources_path="$BUILT_PRODUCTS_DIR/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources"
 
-helper_name="LaunchAtLoginHelper"
 helper_path="$package_resources_path/$helper_name.zip"
 
 contents_path="$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH"
 login_items="$contents_path/Library/LoginItems"
-login_helper_path="$login_items/$helper_name.app"
+login_helper_path="$login_items/LaunchAtLoginHelper.app"
 
 rm -rf "$login_helper_path"
 mkdir -p "$login_items"
 
 # Verify SHA256 checksum of LaunchAtLoginHelper
-checksum="ceef772a05157e9b64e40fb022d19e6462e371f9d69d1dbd3c1e64096bde535d"
 helper_checksum="$(shasum -a 256 "$helper_path" | awk '{print $1}')"
 
 if [[ "$helper_checksum" != "$checksum" ]]; then
