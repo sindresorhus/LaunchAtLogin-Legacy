@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D92CFD2224C5D909005B91BE /* Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92CFD2124C5D909005B91BE /* Toggle.swift */; };
 		E32E9B681EB87D7B000FEEE9 /* LaunchAtLogin.h in Headers */ = {isa = PBXBuildFile; fileRef = E32E9B661EB87D7B000FEEE9 /* LaunchAtLogin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E32E9B6F1EB87DC5000FEEE9 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E9B6E1EB87DC5000FEEE9 /* LaunchAtLogin.swift */; };
 		E32E9B771EB87EA3000FEEE9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E9B761EB87EA3000FEEE9 /* main.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D92CFD2124C5D909005B91BE /* Toggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toggle.swift; sourceTree = "<group>"; };
 		E32E9B631EB87D7B000FEEE9 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LaunchAtLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E32E9B661EB87D7B000FEEE9 /* LaunchAtLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LaunchAtLogin.h; sourceTree = "<group>"; usesTabs = 1; };
 		E32E9B671EB87D7B000FEEE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,10 +81,11 @@
 		E32E9B651EB87D7B000FEEE9 /* LaunchAtLogin */ = {
 			isa = PBXGroup;
 			children = (
-				E32E9B6E1EB87DC5000FEEE9 /* LaunchAtLogin.swift */,
-				E32E9B661EB87D7B000FEEE9 /* LaunchAtLogin.h */,
 				E32E9B921EB889AE000FEEE9 /* copy-helper.sh */,
 				E32E9B671EB87D7B000FEEE9 /* Info.plist */,
+				E32E9B661EB87D7B000FEEE9 /* LaunchAtLogin.h */,
+				E32E9B6E1EB87DC5000FEEE9 /* LaunchAtLogin.swift */,
+				D92CFD2124C5D909005B91BE /* Toggle.swift */,
 			);
 			path = LaunchAtLogin;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E32E9B6F1EB87DC5000FEEE9 /* LaunchAtLogin.swift in Sources */,
+				D92CFD2224C5D909005B91BE /* Toggle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

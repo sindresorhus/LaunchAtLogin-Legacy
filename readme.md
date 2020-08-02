@@ -28,7 +28,13 @@ Add a new ["Run Script Phase"](http://stackoverflow.com/a/39633955/64949) **belo
 "${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh"
 ```
 
-Use it in your app:
+### Use it in your app:
+
+No need to store any state to UserDefaults.
+
+*Note that the [Mac App Store guidelines](https://developer.apple.com/app-store/review/guidelines/) requires “launch at login” functionality to be enabled in response to a user action. This is usually solved by making it a preference that is disabled by default. Many apps also let the user activate it in a welcome screen.*
+
+#### As static property:
 
 ```swift
 import LaunchAtLogin
@@ -42,9 +48,91 @@ print(LaunchAtLogin.isEnabled)
 //=> true
 ```
 
-No need to store any state to UserDefaults.
+#### SwiftUI:
 
-*Note that the [Mac App Store guidelines](https://developer.apple.com/app-store/review/guidelines/) requires “launch at login” functionality to be enabled in response to a user action. This is usually solved by making it a preference that is disabled by default. Many apps also let the user activate it in a welcome screen.*
+You can use `LaunchAtLogin.Toggle` view: a control that toggles launch at login between on and off states.
+
+You create a toggle by providing a label. Set the label to a view that visually describes the purpose of switching between launch at login states. For example:
+
+```swift
+struct ContentView: View {
+	var body: some View {
+		LaunchAtLogin.Toggle {
+			Text("Launch at login")
+		}
+	}
+}
+```
+
+For the common case of text-only labels, you can use the convenience initializer that takes a title string (or localized string key) as its first parameter, instead of a trailing closure:
+
+```swift
+struct ContentView: View {
+	var body: some View {
+		LaunchAtLogin.Toggle("Launch at login")
+	}
+}
+```
+Default initializer will use "Launch at login" as a title.
+
+```swift
+struct ContentView: View {
+	var body: some View {
+		LaunchAtLogin.Toggle()
+	}
+}
+```
+
+As alternative you can use `LaunchAtLogin.observable` as binding with `@ObservedObject`:
+
+```swift
+import SwiftUI
+import LaunchAtLogin
+
+struct ContentView: View {
+	@ObservedObject private var launchAtLogin = LaunchAtLogin.observable
+
+	var body: some View {
+		Toggle(isOn: $launchAtLogin.isEnabled) {
+			Text("Launch at login")
+		}
+	}
+}
+```
+#### Combine:
+
+Just subscribe to `LaunchAtLogin.publisher`:
+
+```swift
+import Combine
+import LaunchAtLogin
+
+final class ViewModel {
+	private var isLaunchAtLoginEnabled = LaunchAtLogin.isEnabled
+	private var cancellables = Set<AnyCancellable>()
+
+	func bind() {
+		LaunchAtLogin
+			.publisher
+			.assign(to: \.isLaunchAtLoginEnabled, on: self)
+			.store(in: &cancellables)
+	}
+}
+```
+
+#### Storyboards:
+
+Bind control to  `LaunchAtLogin.kvo` exposed property:
+
+```swift
+import Cocoa
+import LaunchAtLogin
+
+final class ViewController: NSViewController {
+	@objc dynamic var launchAtLogin = LaunchAtLogin.kvo
+}
+```
+![storyboard_binding](.github/storyboard_binding.png)
 
 ## How does it work?
 
