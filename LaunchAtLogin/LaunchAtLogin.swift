@@ -1,6 +1,6 @@
-import Combine
 import Foundation
 import ServiceManagement
+import Combine
 
 public enum LaunchAtLogin {
 	public static let kvo = KVO()
@@ -47,7 +47,9 @@ extension LaunchAtLogin {
 	public final class Observable: ObservableObject {
 		public var isEnabled: Bool {
 			get { LaunchAtLogin.isEnabled }
-			set { LaunchAtLogin.isEnabled = newValue }
+			set {
+				LaunchAtLogin.isEnabled = newValue
+			}
 		}
 	}
 }
@@ -57,7 +59,9 @@ extension LaunchAtLogin {
 	public final class KVO: NSObject {
 		@objc dynamic public var isEnabled: Bool {
 			get { LaunchAtLogin.isEnabled }
-			set { LaunchAtLogin.isEnabled = newValue }
+			set {
+				LaunchAtLogin.isEnabled = newValue
+			}
 		}
 	}
 }
