@@ -24,7 +24,7 @@ Xcode 12+ required.
 
 #### Carthage
 
-*Warning: Carthage is not recommended. Support for it will be removed at some point in the future.
+*Warning: Carthage is not recommended. Support for it will be removed at some point in the future.*
 
 ```
 github "sindresorhus/LaunchAtLogin"
