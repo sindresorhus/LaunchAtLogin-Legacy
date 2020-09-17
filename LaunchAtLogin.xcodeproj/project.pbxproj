@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D9EF7E1D24BCF9E300A1E9AA /* copy-helper-swiftpm.sh in Resources */ = {isa = PBXBuildFile; fileRef = D9EF7E1C24BCF9E300A1E9AA /* copy-helper-swiftpm.sh */; };
 		D92CFD2224C5D909005B91BE /* Toggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D92CFD2124C5D909005B91BE /* Toggle.swift */; };
+		D9EF7E1D24BCF9E300A1E9AA /* copy-helper-swiftpm.sh in Resources */ = {isa = PBXBuildFile; fileRef = D9EF7E1C24BCF9E300A1E9AA /* copy-helper-swiftpm.sh */; };
 		E32E9B681EB87D7B000FEEE9 /* LaunchAtLogin.h in Headers */ = {isa = PBXBuildFile; fileRef = E32E9B661EB87D7B000FEEE9 /* LaunchAtLogin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E32E9B6F1EB87DC5000FEEE9 /* LaunchAtLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E9B6E1EB87DC5000FEEE9 /* LaunchAtLogin.swift */; };
 		E32E9B771EB87EA3000FEEE9 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32E9B761EB87EA3000FEEE9 /* main.swift */; };
@@ -28,8 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D9EF7E1C24BCF9E300A1E9AA /* copy-helper-swiftpm.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "copy-helper-swiftpm.sh"; sourceTree = "<group>"; };
 		D92CFD2124C5D909005B91BE /* Toggle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = Toggle.swift; sourceTree = "<group>"; usesTabs = 1; };
+		D9EF7E1C24BCF9E300A1E9AA /* copy-helper-swiftpm.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "copy-helper-swiftpm.sh"; sourceTree = "<group>"; };
 		E32E9B631EB87D7B000FEEE9 /* LaunchAtLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LaunchAtLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E32E9B661EB87D7B000FEEE9 /* LaunchAtLogin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LaunchAtLogin.h; sourceTree = "<group>"; usesTabs = 1; };
 		E32E9B671EB87D7B000FEEE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
