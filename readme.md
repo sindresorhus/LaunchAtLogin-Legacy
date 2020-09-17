@@ -14,7 +14,17 @@ This package works with both sandboxed and non-sandboxed apps and it's App Store
 
 ## Install
 
+#### Swift Package Manager
+
+Xcode 12+ required.
+
+```
+.package(url: "https://github.com/sindresorhus/LaunchAtLogin", from: "3.0.2")
+```
+
 #### Carthage
+
+*Warning: Carthage is not recommended. Support for it will be removed at some point in the future.*
 
 ```
 github "sindresorhus/LaunchAtLogin"
@@ -23,6 +33,14 @@ github "sindresorhus/LaunchAtLogin"
 ## Usage
 
 Add a new ["Run Script Phase"](http://stackoverflow.com/a/39633955/64949) **below** "Embed Frameworks" in "Build Phases" with the following:
+
+#### Swift Package Manager
+
+```sh
+"${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh"
+```
+
+#### Carthage
 
 ```sh
 "${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh"
@@ -141,9 +159,11 @@ rm: […]/Resources/copy-helper.sh: No such file or directory
 Command PhaseScriptExecution failed with a nonzero exit code
 ```
 
-#### The size of my app increased after adding `LaunchAtLogin`
+#### The size of my app increased after adding `LaunchAtLogin` when using Carthage
 
 The bundled launcher app is written in Swift and hence needs to embed the Swift runtime libraries. If your project targets macOS 10.14.4 or later, you can avoid embedding the Swift runtime libraries. First, open `./Carthage/Checkouts/LaunchAtLogin/LaunchAtLogin.xcodeproj` and set the deployment target to the same as your app, and then run `$ carthage build`. You'll have to do this each time you update `LaunchAtLogin`.
+
+This is not a problem when using Swift Package Manager.
 
 #### My app doesn't show up in “System Preferences › Users & Groups › Login Items”
 
