@@ -19,7 +19,7 @@ This package works with both sandboxed and non-sandboxed apps and it's App Store
 Xcode 12+ required.
 
 ```
-.package(url: "https://github.com/sindresorhus/LaunchAtLogin", from: "3.0.2")
+.package(url: "https://github.com/sindresorhus/LaunchAtLogin", from: "4.0.0")
 ```
 
 #### Carthage
