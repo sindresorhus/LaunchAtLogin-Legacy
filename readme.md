@@ -192,6 +192,10 @@ CocoaPods used to be supported, but [it did not work well](https://github.com/si
 
 Apple deprecated that API without providing an alternative. Apple engineers have [stated that it's still the preferred API to use](https://github.com/alexzielenski/StartAtLoginController/issues/12#issuecomment-307525807). I plan to use it as long as it's available. There are workarounds I can implement if Apple ever removes the API, so rest assured, this module will be made to work even then. If you want to see this resolved, submit a [Feedback Assistant](https://feedbackassistant.apple.com) report with [the following text](https://github.com/feedback-assistant/reports/issues/16). There's unfortunately still [no way to suppress warnings in Swift](https://stackoverflow.com/a/32861678/64949).
 
+#### I can't see the `LaunchAtLogin.bundle` in my debug release
+
+This framework makes the assumption that your debug configuration is named `Debug`. If you are ussing different configuration names, like `Debug-MAS`, the `LaunchAtLogin_LaunchAtLogin.bundle` will get deleted at build time, as if it was a production-like release, as discussed [here](https://github.com/sindresorhus/LaunchAtLogin/issues/50).
+
 ## Related
 
 - [Defaults](https://github.com/sindresorhus/Defaults) - Swifty and modern UserDefaults
