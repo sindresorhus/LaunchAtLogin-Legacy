@@ -44,6 +44,6 @@ else
 	codesign --force --deep -o runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$helper_path"
 fi
 
-if [[ $CONFIGURATION == "Release" ]]; then
+if [[ $CONFIGURATION != "Debug" ]]; then
 	rm -rf "$contents_path/Resources/LaunchAtLogin_LaunchAtLogin.bundle"
 fi
