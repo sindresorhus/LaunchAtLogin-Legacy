@@ -2,12 +2,13 @@
 
 HELPER_CHECKSUM="6eaaced9173120f82ef98452b2d8cb3705c12db39d4286c70c4f5bb6b67a5e43"
 HELPER_CHECKSUM_RUNTIME="c5a48f5ba681088aa7922b79f2f1b55a1a006904b8de378790eb0e8b0ac66234"
+MACOS_WITH_SWIFT_RUNTIME="10.14.4"
 
 verlte() {
 	[ "$1" = "`echo -e "$1\n$2" | sort -V | head -n1`" ]
 }
 
-if verlte "10.14.4" "$MACOSX_DEPLOYMENT_TARGET"; then
+if verlte "$MACOS_WITH_SWIFT_RUNTIME" "$MACOSX_DEPLOYMENT_TARGET"; then
 	helper_name="LaunchAtLoginHelper"
 	checksum="$HELPER_CHECKSUM"
 else
@@ -39,6 +40,9 @@ unzip "$helper_path" -d "$login_items/"
 defaults write "$login_helper_path/Contents/Info" CFBundleIdentifier -string "$PRODUCT_BUNDLE_IDENTIFIER-LaunchAtLoginHelper"
 
 if [[ -n $CODE_SIGN_ENTITLEMENTS ]]; then
+	if ! verlte "$MACOS_WITH_SWIFT_RUNTIME" "$MACOSX_DEPLOYMENT_TARGET"; then
+		/usr/bin/codesign --force --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$login_helper_path"/Contents/Frameworks/libswift*.dylib
+	fi
 	codesign --force --entitlements="$package_resources_path/LaunchAtLogin.entitlements" --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$login_helper_path"
 else
 	codesign --force --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$helper_path"
