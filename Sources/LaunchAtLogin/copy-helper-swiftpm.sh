@@ -39,11 +39,12 @@ unzip "$helper_path" -d "$login_items/"
 defaults write "$login_helper_path/Contents/Info" CFBundleIdentifier -string "$PRODUCT_BUNDLE_IDENTIFIER-LaunchAtLoginHelper"
 
 if [[ -n $CODE_SIGN_ENTITLEMENTS ]]; then
-	codesign --force --entitlements="$package_resources_path/LaunchAtLogin.entitlements" --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$login_helper_path"
+	codesign --force --entitlements="$package_resources_path/LaunchAtLogin.entitlements" --deep --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$login_helper_path"
 else
-	codesign --force --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$helper_path"
+	codesign --force --deep --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$helper_path"
 fi
 
-if [[ $CONFIGURATION == "Release" ]]; then
+# If this is being built for multiple architectures, assume it is a release build and we should clean up.
+if [[ $ONLY_ACTIVE_ARCH == "NO" ]]; then
 	rm -rf "$contents_path/Resources/LaunchAtLogin_LaunchAtLogin.bundle"
 fi
