@@ -16,11 +16,7 @@ This package works with both sandboxed and non-sandboxed apps and it's App Store
 
 #### Swift Package Manager
 
-Xcode 12+ required.
-
-```
-.package(url: "https://github.com/sindresorhus/LaunchAtLogin", from: "4.0.0")
-```
+Add `https://github.com/sindresorhus/LaunchAtLogin` in the [“Swift Package Manager” tab in Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app).
 
 #### Carthage
 
