@@ -32,19 +32,25 @@ github "sindresorhus/LaunchAtLogin"
 
 ## Usage
 
-Add a new ["Run Script Phase"](http://stackoverflow.com/a/39633955/64949) **below** "Embed Frameworks" in "Build Phases" with the following:
-
 #### Swift Package Manager
+
+Add a new [“Run Script Phase”](http://stackoverflow.com/a/39633955/64949) **below** (not into) “Copy Bundle Resources” in “Build Phases” with the following:
 
 ```sh
 "${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh"
 ```
 
+*(I would name the run script `Copy “Launch at Login Helper”`)*
+
 #### Carthage
+
+Add a new [“Run Script Phase”](http://stackoverflow.com/a/39633955/64949) **below** (not into) “Embed Frameworks” in “Build Phases” with the following:
 
 ```sh
 "${PROJECT_DIR}/Carthage/Build/Mac/LaunchAtLogin.framework/Resources/copy-helper.sh"
 ```
+
+*(I would name the run script `Copy “Launch at Login Helper”`)*
 
 ### Use it in your app
 
@@ -143,7 +149,7 @@ final class ViewController: NSViewController {
 
 ## How does it work?
 
-The framework bundles the helper app needed to launch your app and copies it into your app at build time.
+The package bundles the helper app needed to launch your app and copies it into your app at build time.
 
 ## FAQ
 
@@ -186,7 +192,7 @@ Some helpful Stack Overflow answers:
 
 #### Can you support CocoaPods?
 
-CocoaPods used to be supported, but [it did not work well](https://github.com/sindresorhus/LaunchAtLogin/issues/22) and there was no easy way to fix it, so support was dropped. Even though you mainly use CocoaPods, you can still use Carthage just for this package without any problems.
+CocoaPods used to be supported, but [it did not work well](https://github.com/sindresorhus/LaunchAtLogin/issues/22) and there was no easy way to fix it, so support was dropped. Even though you mainly use CocoaPods, you can still use Swift Package Manager just for this package without any problems.
 
 #### I'm getting a `'SMCopyAllJobDictionaries' was deprecated in OS X 10.10` warning
 

@@ -2,12 +2,11 @@ import Cocoa
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationDidFinishLaunching(_ notification: Notification) {
-		let bundleId = Bundle.main.bundleIdentifier!
-		// TODO: Make this more strict by only replacing at the end
-		let mainBundleId = bundleId.replacingOccurrences(of: "-LaunchAtLoginHelper", with: "")
+		let bundleIdentifier = Bundle.main.bundleIdentifier!
+		let mainBundleIdentifier = bundleIdentifier.replacingOccurrences(of: #"-LaunchAtLoginHelper$"#, with: "", options: .regularExpression)
 
-		// Ensure the app is not already running
-		guard NSRunningApplication.runningApplications(withBundleIdentifier: mainBundleId).isEmpty else {
+		// Ensures the app is not already running.
+		guard NSRunningApplication.runningApplications(withBundleIdentifier: mainBundleIdentifier).isEmpty else {
 			NSApp.terminate(nil)
 			return
 		}
