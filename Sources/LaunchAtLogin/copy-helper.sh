@@ -17,8 +17,8 @@ else
 fi
 
 # If this is being built for multiple architectures, assume it is a release build and we should clean up.
-if [[ $ONLY_ACTIVE_ARCH == "NO" ]]; then
-	rm -rf "$origin_helper_path"
-	rm "$(dirname "$origin_helper_path")/copy-helper.sh"
-	rm "$(dirname "$origin_helper_path")/LaunchAtLogin.entitlements"
-fi
+#if [[ $ONLY_ACTIVE_ARCH == "NO" ]]; then
+#	rm -rf "$origin_helper_path"
+#	rm "$(dirname "$origin_helper_path")/copy-helper.sh"
+#	rm "$(dirname "$origin_helper_path")/LaunchAtLogin.entitlements"
+#fi
