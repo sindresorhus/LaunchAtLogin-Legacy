@@ -31,13 +31,24 @@ public enum LaunchAtLogin {
 			}
 
 			kvo.willChangeValue(for: \.isEnabled)
-			SMLoginItemSetEnabled(id as CFString, newValue)
+			Self._SMLoginItemSetEnabled(id: id, isEnabled: newValue)
 			kvo.didChangeValue(for: \.isEnabled)
 
 			if #available(macOS 10.15, *) {
 				_publisher.send(newValue)
 			}
 		}
+	}
+	
+	private static func _SMLoginItemSetEnabled(id: String, isEnabled: Bool) {
+		let handle = dlopen(nil, RTLD_LAZY)
+		let sym = dlsym(handle, "SMLoginItemSetEnabled")
+		typealias Prototype = @convention(c) (_ identifier: CFString, _ enabled: Bool) -> Bool
+		let _SMLoginItemSetEnabled = unsafeBitCast(sym, to: Prototype.self)
+		
+		_SMLoginItemSetEnabled(id as CFString, isEnabled)
+		
+		dlclose(handle)
 	}
 }
 
