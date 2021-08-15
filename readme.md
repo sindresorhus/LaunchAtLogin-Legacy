@@ -6,6 +6,35 @@ It's usually quite a [convoluted and error-prone process](before-after.md) to ad
 
 This package works with both sandboxed and non-sandboxed apps and it's App Store compatible and used in apps like [Plash](https://github.com/sindresorhus/Plash), [Dato](https://sindresorhus.com/dato), [Lungo](https://sindresorhus.com/lungo), and [Battery Indicator](https://sindresorhus.com/battery-indicator).
 
+<br>
+
+---
+
+<div align="center">
+	<p>
+		<p>
+			<sup>
+				<a href="https://github.com/sponsors/sindresorhus">Sindre‘s open source work is supported by the community</a>
+			</sup>
+		</p>
+		<sup>Special thanks to:</sup>
+		<br>
+		<br>
+		<a href="https://keygen.sh">
+			<div>
+				<img src="https://sindresorhus.com/assets/thanks/keygen-logo.svg" width="210" alt="Keygen">
+			</div>
+			<b>A dead-simple software licensing and distribution API built for developers</b>
+		</a>
+		<br>
+		<br>
+	</p>
+</div>
+
+---
+
+<br>
+
 ## Requirements
 
 - macOS 10.12+
