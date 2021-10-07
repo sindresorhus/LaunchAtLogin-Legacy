@@ -219,10 +219,6 @@ Some helpful Stack Overflow answers:
 
 CocoaPods used to be supported, but [it did not work well](https://github.com/sindresorhus/LaunchAtLogin/issues/22) and there was no easy way to fix it, so support was dropped. Even though you mainly use CocoaPods, you can still use Swift Package Manager just for this package without any problems.
 
-#### I'm getting a `'SMCopyAllJobDictionaries' was deprecated in OS X 10.10` warning
-
-Apple deprecated that API without providing an alternative. Apple engineers have [stated that it's still the preferred API to use](https://github.com/alexzielenski/StartAtLoginController/issues/12#issuecomment-307525807). I plan to use it as long as it's available. There are workarounds I can implement if Apple ever removes the API, so rest assured, this module will be made to work even then. If you want to see this resolved, submit a [Feedback Assistant](https://feedbackassistant.apple.com) report with [the following text](https://github.com/feedback-assistant/reports/issues/16). There's unfortunately still [no way to suppress warnings in Swift](https://stackoverflow.com/a/32861678/64949).
-
 #### I can't see the `LaunchAtLogin.bundle` in my debug build or I get a notarization error for developer ID distribution
 
 As discussed [here](https://github.com/sindresorhus/LaunchAtLogin/issues/50), this package tries to determine if you're making a release or debug build and clean up its install accordingly. If your debug build is missing the bundle or, conversely, your release build has the bundle and it causes a code signing error, that means this has failed.
