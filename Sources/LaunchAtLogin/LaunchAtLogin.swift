@@ -18,7 +18,7 @@ public enum LaunchAtLogin {
 	public static var isEnabled: Bool {
 		get {
 
-            guard let jobs = (LaunchAtLogin.self as DeprecationWarningWorkaround.Type).jobsDict else {
+			guard let jobs = (LaunchAtLogin.self as DeprecationWarningWorkaround.Type).jobsDict else {
 				return false
 			}
 
