@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    name: Build Package
+    runs-on: macOS-11.0
+    steps:
+      - uses: actions/checkout@v2
+      - name: swift build
+        run: |
+          swift build
