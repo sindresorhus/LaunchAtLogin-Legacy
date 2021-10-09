@@ -17,7 +17,7 @@ public enum LaunchAtLogin {
 
 	public static var isEnabled: Bool {
 		get {
-			guard let jobs = (SMCopyAllJobDictionaries(kSMDomainUserLaunchd)?.takeRetainedValue() as? [[String: AnyObject]]) else {
+			guard let jobs = (LaunchAtLogin.self as DeprecationWarningWorkaround.Type).jobsDict else {
 				return false
 			}
 
@@ -63,5 +63,18 @@ extension LaunchAtLogin {
 				LaunchAtLogin.isEnabled = newValue
 			}
 		}
+	}
+}
+
+private protocol DeprecationWarningWorkaround {
+	static var jobsDict: [[String: AnyObject]]? { get }
+}
+
+extension LaunchAtLogin: DeprecationWarningWorkaround {
+	// Workaround to silence "'SMCopyAllJobDictionaries' was deprecated in OS X 10.10" warning
+	// Radar: https://openradar.appspot.com/radar?id=5033815495933952
+	@available(*, deprecated)
+	static var jobsDict: [[String: AnyObject]]? {
+		SMCopyAllJobDictionaries(kSMDomainUserLaunchd)?.takeRetainedValue() as? [[String: AnyObject]]
 	}
 }
