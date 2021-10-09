@@ -71,7 +71,7 @@ private protocol DeprecationWarningWorkaround {
 }
 
 extension LaunchAtLogin: DeprecationWarningWorkaround {
-	// workaround to silence "'SMCopyAllJobDictionaries' was deprecated in OS X 10.10" warning
+	// Workaround to silence "'SMCopyAllJobDictionaries' was deprecated in OS X 10.10" warning
 	// Radar: https://openradar.appspot.com/radar?id=5033815495933952
 	@available(*, deprecated)
 	static var jobsDict: [[String: AnyObject]]? {
