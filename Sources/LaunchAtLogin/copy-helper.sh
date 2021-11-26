@@ -8,7 +8,16 @@ rm -rf "$helper_path"
 mkdir -p "$helper_dir"
 cp -rf "$origin_helper_path" "$helper_dir/"
 
-defaults write "$helper_path/Contents/Info" CFBundleIdentifier -string "$PRODUCT_BUNDLE_IDENTIFIER-LaunchAtLoginHelper"
+plist="$TARGET_BUILD_DIR/$INFOPLIST_PATH"
+bundle_override=$(/usr/libexec/PlistBuddy -c 'Print LLTargetBundleId' "${plist}")
+
+if [ ! -z "$bundle_override" -a "$bundle_override" != " " ]; then
+	bundle_identifier="$bundle_override"
+else
+	bundle_identifier="$PRODUCT_BUNDLE_IDENTIFIER-LaunchAtLoginHelper"
+fi
+
+defaults write "$helper_path/Contents/Info" CFBundleIdentifier -string "$bundle_identifier"
 
 if [[ -n $CODE_SIGN_ENTITLEMENTS ]]; then
 	codesign --force --entitlements="$(dirname "$origin_helper_path")/LaunchAtLogin.entitlements" --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$helper_path"

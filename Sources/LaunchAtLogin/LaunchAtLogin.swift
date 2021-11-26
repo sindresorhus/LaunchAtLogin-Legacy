@@ -13,7 +13,7 @@ public enum LaunchAtLogin {
 	@available(macOS 10.15, *)
 	public static let publisher = _publisher.eraseToAnyPublisher()
 
-	private static let id = "\(Bundle.main.bundleIdentifier!)-LaunchAtLoginHelper"
+	private static let id = Bundle.main.object(forInfoDictionaryKey: "LLTargetBundleId") as? String ?? "\(Bundle.main.bundleIdentifier!)-LaunchAtLoginHelper"
 
 	public static var isEnabled: Bool {
 		get {

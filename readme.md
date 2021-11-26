@@ -172,6 +172,14 @@ final class ViewController: NSViewController {
 
 <img src="storyboard-binding.png" width="445">
 
+#### Override bundle id of launched application
+
+By default the bundle id of the application that uses the helper will be used but you can override it by setting the `LLTargetBundleId` in Info.plist to the bundle id of the application that should be set as launch target.
+
+Make sure that the bundle id ends with `-LaunchAtLoginHelper` if you still would like to use the helper application in this library.
+
+If you point to a completely custom launch application and just use the api that this library provides, you can omit the "Run Script" phase.
+
 ## How does it work?
 
 The package bundles the helper app needed to launch your app and copies it into your app at build time.
