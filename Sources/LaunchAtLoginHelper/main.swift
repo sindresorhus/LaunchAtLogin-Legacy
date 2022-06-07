@@ -3,6 +3,14 @@ import AppKit
 // TODO: When targeting macOS 11, convert this to use `App` protocol and remove `NSPrincipalClass` in Info.plist.
 
 final class AppDelegate: NSObject, NSApplicationDelegate {
+	let nc = DistributedNotificationCenter.default()
+	
+	@objc func terminateApp() {
+		NSLog("LaunchAtLogin helper terminateApp called")
+		nc.removeObserver(self)
+		NSApp.terminate(nil)
+	}
+	
 	func applicationDidFinishLaunching(_ notification: Notification) {
 		let bundleIdentifier = Bundle.main.bundleIdentifier!
 		let mainBundleIdentifier = bundleIdentifier.replacingOccurrences(of: #"-LaunchAtLoginHelper$"#, with: "", options: .regularExpression)
@@ -16,7 +24,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 		let pathComponents = (Bundle.main.bundlePath as NSString).pathComponents
 		let mainPath = NSString.path(withComponents: Array(pathComponents[0...(pathComponents.count - 5)]))
 		NSWorkspace.shared.launchApplication(mainPath)
-		NSApp.terminate(nil)
+		nc.addObserver(self, selector: #selector(terminateApp), name: NSNotification.Name("TerminateHelper"), object: nil)
+		NSLog("LaunchAtLogin helper exited")
 	}
 }
 

@@ -1,6 +1,7 @@
 import Foundation
 import ServiceManagement
 import Combine
+import AppKit
 
 public enum LaunchAtLogin {
 	public static let kvo = KVO()
@@ -39,6 +40,17 @@ public enum LaunchAtLogin {
 			}
 		}
 	}
+	
+	public static let wasLaunchedOnLogin: Bool = {
+        if NSRunningApplication.runningApplications(withBundleIdentifier: id).isEmpty {
+            return false
+        } else {
+            // Helper is running, ask it to terminate
+            let nc = DistributedNotificationCenter.default()
+            nc.post(name: NSNotification.Name("TerminateHelper"), object: nil)
+            return true
+        }
+	}()
 }
 
 // MARK: - LaunchAtLoginObservable
