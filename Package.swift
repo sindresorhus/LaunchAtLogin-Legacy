@@ -1,10 +1,10 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.7
 import PackageDescription
 
 let package = Package(
 	name: "LaunchAtLogin",
 	platforms: [
-		.macOS(.v10_12)
+		.macOS(.v10_13)
 	],
 	products: [
 		.library(

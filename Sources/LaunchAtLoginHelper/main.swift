@@ -1,7 +1,5 @@
 import AppKit
 
-// TODO: When targeting macOS 11, convert this to use `App` protocol and remove `NSPrincipalClass` in Info.plist.
-
 final class AppDelegate: NSObject, NSApplicationDelegate {
 	func applicationDidFinishLaunching(_ notification: Notification) {
 		let bundleIdentifier = Bundle.main.bundleIdentifier!

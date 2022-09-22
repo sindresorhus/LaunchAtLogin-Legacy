@@ -25,7 +25,7 @@ extension LaunchAtLogin {
 	}
 	```
 	*/
-	public struct Toggle<Label>: View where Label: View {
+	public struct Toggle<Label: View>: View {
 		@ObservedObject private var launchAtLogin = LaunchAtLogin.observable
 		private let label: Label
 
@@ -46,7 +46,7 @@ extension LaunchAtLogin {
 }
 
 @available(macOS 10.15, *)
-extension LaunchAtLogin.Toggle where Label == Text {
+extension LaunchAtLogin.Toggle<Text> {
 	/**
 	Creates a toggle that generates its label from a localized string key.
 
@@ -67,7 +67,7 @@ extension LaunchAtLogin.Toggle where Label == Text {
 	- Parameters:
 		- title: A string that describes the purpose of the toggle.
 	*/
-	public init<S>(_ title: S) where S: StringProtocol {
+	public init(_ title: some StringProtocol) {
 		label = Text(title)
 	}
 
