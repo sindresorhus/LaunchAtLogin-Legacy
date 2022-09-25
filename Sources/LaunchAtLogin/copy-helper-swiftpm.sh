@@ -41,7 +41,7 @@ defaults write "$login_helper_path/Contents/Info" CFBundleIdentifier -string "$P
 if [[ -n $CODE_SIGN_ENTITLEMENTS ]]; then
 	codesign --force --entitlements="$package_resources_path/LaunchAtLogin.entitlements" --deep --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$login_helper_path"
 else
-	codesign --force --deep --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$helper_path"
+	codesign --force --deep --options=runtime --sign="$EXPANDED_CODE_SIGN_IDENTITY_NAME" "$login_helper_path"
 fi
 
 # If this is being built for multiple architectures, assume it is a release build and we should clean up.
