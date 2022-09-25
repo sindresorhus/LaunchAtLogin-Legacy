@@ -34,6 +34,8 @@ Add a new [“Run Script Phase”](http://stackoverflow.com/a/39633955/64949) **
 "${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh"
 ```
 
+And uncheck “Based on dependency analysis”.
+
 *(I would name the run script `Copy “Launch at Login Helper”`)*
 
 #### Carthage
