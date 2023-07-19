@@ -41,7 +41,7 @@ For usages with Xcode 15.0 or newer, or with "User Script Sandboxing" options en
 + ${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/LaunchAtLoginHelper.zip
 + ${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/LaunchAtLoginHelper-with-runtime.zip
 
-<img src="run-script-phase.png" width="445">
+<img src="run-script-phase.png">
 
 *(I would name the run script `Copy “Launch at Login Helper”`)*
 
