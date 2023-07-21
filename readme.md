@@ -42,7 +42,7 @@ With Xcode 15 or newer (or older versions with "User Script Sandboxing" option e
 - `${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/LaunchAtLoginHelper.zip`
 - `${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/LaunchAtLoginHelper-with-runtime.zip`
 
-<img src="run-script-phase.png">
+![](run-script-phase.png)
 
 *(I would name the run script `Copy “Launch at Login Helper”`)*
 
