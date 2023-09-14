@@ -191,4 +191,4 @@ The script's determination is based on the “Build Active Architecture Only” 
 - [KeyboardShortcuts](https://github.com/sindresorhus/KeyboardShortcuts) - Add user-customizable global keyboard shortcuts to your macOS app
 - [DockProgress](https://github.com/sindresorhus/DockProgress) - Show progress in your app's Dock icon
 - [create-dmg](https://github.com/sindresorhus/create-dmg) - Create a good-looking DMG for your macOS app in seconds
-- [More…](https://github.com/search?q=user%3Asindresorhus+language%3Aswift)
+- [More…](https://github.com/search?q=user%3Asindresorhus+language%3Aswift+archived%3Afalse&type=repositories)
