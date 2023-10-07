@@ -36,14 +36,9 @@ Add a new [“Run Script Phase”](http://stackoverflow.com/a/39633955/64949) **
 
 And uncheck “Based on dependency analysis”.
 
-With Xcode 15 or newer (or older versions with "User Script Sandboxing" option enabled), add the following entries to “Input Files”:
+The build phase cannot run with "User Script Sandboxing" enabled. With Xcode 15 or newer where it is enabled by default, disable "User Script Sandboxing" in build settings. 
 
-- `${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/copy-helper-swiftpm.sh`
-- `${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/LaunchAtLoginHelper.zip`
-- `${BUILT_PRODUCTS_DIR}/LaunchAtLogin_LaunchAtLogin.bundle/Contents/Resources/LaunchAtLoginHelper-with-runtime.zip`
-
-![](run-script-phase.png)
-
+*(It needs some extra works to have our script to comply with the build phase sandbox.)*
 *(I would name the run script `Copy “Launch at Login Helper”`)*
 
 ### Use it in your app
