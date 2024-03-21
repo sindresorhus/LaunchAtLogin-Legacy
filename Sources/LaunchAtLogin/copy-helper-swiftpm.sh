@@ -45,6 +45,6 @@ else
 fi
 
 # If this is being built for multiple architectures, assume it is a release build and we should clean up.
-if [[ $ONLY_ACTIVE_ARCH == "NO" ]]; then
+if [[ $ONLY_ACTIVE_ARCH != "YES" ]]; then
 	rm -rf "$contents_path/Resources/LaunchAtLogin_LaunchAtLogin.bundle"
 fi
