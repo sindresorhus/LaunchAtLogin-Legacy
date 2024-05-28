@@ -22,7 +22,7 @@ macOS 10.13+
 
 ## Install
 
-Add `https://github.com/sindresorhus/LaunchAtLogin` in the [“Swift Package Manager” tab in Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app).
+Add `https://github.com/sindresorhus/LaunchAtLogin-Legacy` in the [“Swift Package Manager” tab in Xcode](https://developer.apple.com/documentation/xcode/adding_package_dependencies_to_your_app).
 
 ## Usage
 
@@ -181,7 +181,7 @@ Some helpful Stack Overflow answers:
 
 #### I can't see the `LaunchAtLogin.bundle` in my debug build or I get a notarization error for developer ID distribution
 
-As discussed [here](https://github.com/sindresorhus/LaunchAtLogin/issues/50), this package tries to determine if you're making a release or debug build and clean up its install accordingly. If your debug build is missing the bundle or, conversely, your release build has the bundle and it causes a code signing error, that means this has failed.
+As discussed [here](https://github.com/sindresorhus/LaunchAtLogin-Legacy/issues/50), this package tries to determine if you're making a release or debug build and clean up its install accordingly. If your debug build is missing the bundle or, conversely, your release build has the bundle and it causes a code signing error, that means this has failed.
 
 The script's determination is based on the “Build Active Architecture Only” flag in build settings. If this is set to `YES`, then the script will package LaunchAtLogin for a debug build. You must set this flag to `NO` if you plan on distributing the build with codesigning.
 
